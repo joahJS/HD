@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.33 257.67">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="_레이어_1-2" data-name="레이어 1">
+    <g>
+      <rect class="cls-1" x=".5" y=".5" width="218.33" height="256.67"/>
+      <rect class="cls-1" x="8" y="6.17" width="203.33" height="245.33"/>
+      <rect class="cls-1" x="2.75" y="6.17" width="17.33" height="247.83"/>
+      <rect class="cls-1" x="132.31" y="6.17" width="9.56" height="247.83"/>
+      <rect class="cls-1" x="141.86" y="6.17" width="9.56" height="247.83"/>
+      <rect class="cls-1" x="141.92" y="6.22" width="9.56" height="247.83"/>
+      <circle class="cls-1" cx="156.92" cy="63.33" r="2.5"/>
+      <circle class="cls-1" cx="156.92" cy="121.85" r="2.5"/>
+      <circle class="cls-1" cx="156.92" cy="180.37" r="2.5"/>
+      <circle class="cls-1" cx="156.92" cy="238.89" r="2.5"/>
+      <circle class="cls-1" cx="25.36" cy="63.33" r="2.5"/>
+      <circle class="cls-1" cx="25.36" cy="121.85" r="2.5"/>
+      <circle class="cls-1" cx="25.36" cy="180.37" r="2.5"/>
+      <circle class="cls-1" cx="25.36" cy="238.89" r="2.5"/>
+    </g>
+  </g>
+</svg>

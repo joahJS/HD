@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD현대일렉트릭</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/common.js"></script>
+</head>
+<body>  
+    <div class="floating-btns">
+        <button type="button" class="ex-show-btn" onclick="dialShow()">
+            Dialog Window 보기
+        </button>
+    </div>
+
+    <dialog class="common-dialog">
+        <div class="dial-wrapper">
+            <div class="dial-header">
+                Dialog Window
+                <button class="dial-close" type="button" onclick="dialClose(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(33,33,33,1)"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+                </button>
+            </div>
+            <div class="dial-body">
+                
+            </div>
+            <div class="dial-footer">
+                <button class="common-button" type="button">Confirm</button>
+                <button class="common-button w-btn" type="button" onclick="dialClose(this)">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        //Dialog
+        const dialog = document.querySelector('.common-dialog');
+
+        function dialShow() {
+            dialog.showModal();
+        }
+
+        function dialClose(e) {
+            var thisDialog = e.closest('.common-dialog');
+
+            thisDialog.close();
+        }
+        
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD현대일렉트릭</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="nav" class="top-tabs-wrapper"></div>
+
+        <div class="content">
+            <div class="work-area flex-col on">
+                <div class="accordian-wrapper">
+                    <div class="acc-header">
+                        <h1 class="acc-header-title">Add a new design</h1>
+                        <button type="button" class="acc-header-button"></button>
+                    </div>
+                    <div class="acc-body">
+                        <p class="acc-body-subtext">Design your project following the recommended flow</p>
+                        <ul class="acc-body-list">
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts sld">
+                                    <h2>Single Line Diagram</h2>
+                                    <p>Custom draw & compute your</p>
+                                    <p>Single Line Diagrams.</p>
+                                </div>
+                                <button type="button"><p>Click to Create a new SLD</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts trip">
+                                    <h2>Trip Curves</h2>
+                                    <p>Plot and verify your devices trip</p>
+                                    <p>curves at a glance.</p>
+                                </div>
+                                <button type="button"><p>Click to Create new Trip Curves study</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts devices">
+                                    <h2>Devices & Solutions</h2>
+                                    <p>Easily select & customise your</p>
+                                    <p>devices with accessories.</p>
+                                </div>
+                                <button type="button"><p>Click to Add Devices & solutions</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts enclosures">
+                                    <h2>Enclosures & Switchgears</h2>
+                                    <p>Quickly add devices to your</p>
+                                    <p>Enclosures & Switchgears.</p>
+                                </div>
+                                <button type="button"><p>Click to Add a Enclosure / Switchgear</p></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordian-wrapper">
+                    <div class="acc-header">
+                        <h1 class="acc-header-title">Tools</h1>
+                        <button type="button" class="acc-header-button"></button>
+                    </div>
+                    <div class="acc-body">
+                        <ul class="acc-body-list">
+                            <li class="acc-body-item otc-item">
+                                <div class="new-otc-img"></div>
+                                <div class="acc-item-texts">OTC</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="work-area">
+                <p>area2</p>
+            </div>
+            <div class="work-area">
+                <p>area3</p>
+            </div>
+            <div class="work-area">
+                <p>area4</p>
+            </div>
+            <div class="work-area">
+                <p>area5</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+
+        //넥스트버튼 클릭시 단계 상승
+        $(document).ready(function() {
+            //상단 nav-bar
+            $('#nav').load('/include/NAV.html', function() {
+                let nextBtn = document.querySelector('.next-button');
+                let gradeItems = document.querySelectorAll('.grade-item');
+                let areaItems = document.querySelectorAll('.work-area');
+
+                nextBtn.addEventListener('click', function() {
+                    let items = document.querySelectorAll('.grade-item');
+                        for (let i = 0; i < items.length; i++) {
+                            if (items[i].classList.contains('on')) {
+                                items[i].classList.remove('on');
+                                items[i].classList.add('end');
+
+                                areaItems[i].classList.remove('on');
+
+                                if (i < items.length) {
+                                    items[i + 1].classList.add('on');
+                                    areaItems[i + 1].classList.add('on');
+                                }
+                                break;
+                            }
+                        }
+                })
+
+            });       
+        })        
+
+
+        //아코디언 토글(add a new design / Tools)
+        const accToggleBtn = document.querySelectorAll('.acc-header');
+
+        accToggleBtn.forEach(function(e) {
+            e.addEventListener('click', function(f) {
+                let thisWrapper = f.target.parentNode;
+                let thisBody = thisWrapper.querySelector('.acc-body');
+                let thisBtn = f.target.querySelector('.acc-header-button');
+
+                thisBody.classList.toggle('on');
+                thisBtn.classList.toggle('on');
+            })
+        })
+        
+    </script>
+    
+    
+</body>
+</html>

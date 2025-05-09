@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD현대일렉트릭</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="nav" class="top-tabs-wrapper"></div>
+
+        <div class="content">
+            <div class="work-area flex-col on">
+                <div class="accordian-wrapper">
+                    <div class="acc-header">
+                        <h1 class="acc-header-title">Add a new design</h1>
+                        <button type="button" class="acc-header-button"></button>
+                    </div>
+                    <div class="acc-body">
+                        <p class="acc-body-subtext">Design your project following the recommended flow</p>
+                        <ul class="acc-body-list">
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts sld">
+                                    <h2>Single Line Diagram</h2>
+                                    <p>Custom draw & compute your</p>
+                                    <p>Single Line Diagrams.</p>
+                                </div>
+                                <button type="button"><p>Click to Create a new SLD</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts trip">
+                                    <h2>Trip Curves</h2>
+                                    <p>Plot and verify your devices trip</p>
+                                    <p>curves at a glance.</p>
+                                </div>
+                                <button type="button"><p>Click to Create new Trip Curves study</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts devices">
+                                    <h2>Devices & Solutions</h2>
+                                    <p>Easily select & customise your</p>
+                                    <p>devices with accessories.</p>
+                                </div>
+                                <button type="button"><p>Click to Add Devices & solutions</p></button>
+                            </li>
+                            <li class="acc-body-item">
+                                <div class="acc-item-texts enclosures">
+                                    <h2>Enclosures & Switchgears</h2>
+                                    <p>Quickly add devices to your</p>
+                                    <p>Enclosures & Switchgears.</p>
+                                </div>
+                                <button type="button"><p>Click to Add a Enclosure / Switchgear</p></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordian-wrapper">
+                    <div class="acc-header">
+                        <h1 class="acc-header-title">Tools</h1>
+                        <button type="button" class="acc-header-button"></button>
+                    </div>
+                    <div class="acc-body">
+                        <ul class="acc-body-list">
+                            <li class="acc-body-item otc-item">
+                                <div class="new-otc-img"></div>
+                                <div class="acc-item-texts">OTC</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="work-area divide-area">
+                <div class="work-inner-area">
+                    <section class="toolbar-wrapper">
+                        <ul class="toolbar-list">
+                            <li class="toolbar-item">
+                                <button type="button">
+                                    <p>Snap</p>
+                                </button>
+                            </li>
+                            <li class="toolbar-item">
+                                <button type="button">
+                                    <p>DXF Export</p>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="slide-line-wrapper">
+                    <button type="button"></button>
+                </div>
+                <div class="properties-area">
+                    <div class="prop-header">Properties</div>
+                </div>
+                
+            </div>
+            <div class="work-area">
+                <p>Installation area</p>
+            </div>
+            <div class="work-area">
+                <p>Configuration area</p>
+            </div>
+            <div class="work-area">
+                <p>Parts & BOM area</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="floating-btns">
+        <p style="margin-right: 24px;">예시용 버튼모음</p>
+        <button type="button" class="loading-show" onclick="loadShow()">
+            로딩이미지 보기
+        </button>
+        <button type="button" class="ex-show-btn" onclick="dialShow()">
+            Dialog Window 보기
+        </button>
+        <button type="button" class="ex-show-btn" onclick="msgShow()">
+            Message Window 보기
+        </button>
+    </div>
+    
+
+    <section id="loadingMd" style="display: none;">
+        <div id="load-body">
+            <ul class="load-img-wrapper">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <p class="load-text">Loading...</p>
+        </div>
+    </section>
+
+    <dialog class="common-dialog">
+        <div class="dial-wrapper">
+            <div class="dial-header">
+                Dialog Window
+                <button class="dial-close" type="button" onclick="dialClose(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(33,33,33,1)"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+                </button>
+            </div>
+            <div class="dial-body">
+                
+            </div>
+            <div class="dial-footer">
+                <button class="common-button" type="button">Confirm</button>
+                <button class="common-button w-btn" type="button" onclick="dialClose(this)">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="common-message">
+        <div class="msg-wrapper">
+            <div class="msg-header">
+                Message Window
+                <button class="msg-close" type="button" onclick="msgClose(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="rgba(33,33,33,1)"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+                </button>
+            </div>
+            <div class="msg-body">
+                <p>Unsaved changes will be lost.</p>
+                <p>Click confirm to continue.</p>
+            </div>
+            <div class="msg-footer">
+                <button class="common-button" type="button">Confirm</button>
+                <button class="common-button w-btn" type="button" onclick="msgClose(this)">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+
+
+        //넥스트버튼 클릭시 단계 상승
+        $(document).ready(function() {
+            //상단 nav-bar
+            $('#nav').load('include/NAV.html', function() {
+                let nextBtn = document.querySelector('.next-button');
+                let gradeItems = document.querySelectorAll('.grade-item');
+                let areaItems = document.querySelectorAll('.work-area');
+
+                nextBtn.addEventListener('click', function() {
+                    let items = document.querySelectorAll('.grade-item');
+                        for (let i = 0; i < items.length; i++) {
+                            if (items[i].classList.contains('on')) {
+                                items[i].classList.remove('on');
+                                items[i].classList.add('end');
+
+                                areaItems[i].classList.remove('on');
+
+                                if (i + 1 < items.length) {
+                                    items[i + 1].classList.add('on');
+                                    areaItems[i + 1].classList.add('on');
+                                }
+                                break;
+                            }
+                        }
+                })
+
+            });       
+        })        
+
+
+        //아코디언 토글
+        const accToggleBtn = document.querySelectorAll('.acc-header');
+
+        accToggleBtn.forEach(function(e) {
+            e.addEventListener('click', function(f) {
+                let thisWrapper = f.target.parentNode;
+                let thisBody = thisWrapper.querySelector('.acc-body');
+                let thisBtn = f.target.querySelector('.acc-header-button');
+
+                thisBody.classList.toggle('on');
+                thisBtn.classList.toggle('on');
+            })
+        })
+
+        //Loading
+        const loadingMd = document.getElementById('loadingMd');
+
+        function loadShow() {
+            loadingMd.style.display = 'flex';
+        }
+
+        //Dialog
+        const dialog = document.querySelector('.common-dialog');
+
+        function dialShow() {
+            dialog.showModal();
+        }
+
+        function dialClose(e) {
+            var thisDialog = e.closest('.common-dialog');
+
+            thisDialog.close();
+        }
+
+        //Message
+        const msgMd = document.querySelector('.common-message');
+
+        function msgShow() {
+            msgMd.showModal();
+        }
+
+        function msgClose(e) {
+            var thisMsg = e.closest('.common-message');
+
+            thisMsg.close();
+        }
+        
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD현대일렉트릭</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="nav" class="top-tabs-wrapper"></div>
+
+        <div class="content">
+            
+            <div class="work-area on">
+                
+                <div class="work-header">
+                    <ul class="work-inner-tab">
+                        <li class="inner-tab-item on">Specs</li>
+                        <li class="inner-tab-item">SLD</li>
+                        <li class="inner-tab-item">Installation</li>
+                        <li class="inner-tab-item">Configuration</li>
+                    </ul>
+                    <button type="button" class="common-button work-next-btn">Next</button>
+                </div>
+
+                <section class="work-content specs-wrapper">
+                    <div class="specs-item">
+                        <h3 class="specs-item-title">Info</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Name</label>
+                                <input class="input-item" type="text">
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Panel Q`ty</label>
+                                <input class="input-item" type="text">
+                            </li>
+                        </ul>
+
+                        <h3 class="specs-item-title">General Specification</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Related Voltage</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Model Type</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="specs-item">
+                        <h3 class="specs-item-title">Info</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Name</label>
+                                <input class="input-item" type="text">
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Panel Q`ty</label>
+                                <input class="input-item" type="text">
+                            </li>
+                        </ul>
+
+                        <h3 class="specs-item-title">General Specification</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Related Voltage</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Model Type</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="specs-item">
+                        <h3 class="specs-item-title">Info</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Name</label>
+                                <input class="input-item" type="text">
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Panel Q`ty</label>
+                                <input class="input-item" type="text">
+                            </li>
+                        </ul>
+
+                        <h3 class="specs-item-title">General Specification</h3>
+                        <ul class="specs-body-list">
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Related Voltage</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                            <li class="sps-body-item">
+                                <label class="sps-item-name">Model Type</label>
+                                <select class="select-item">
+                                    <option value=""></option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+                
+                <!-- <section class="work-wrapper">
+                    <div class="work-header">
+                        <div class="work-tab">
+                            <div class="work-tab-item">Specs</div>
+                            <div class="work-tab-item">SLD</div>
+                            <div class="work-tab-item">Installation</div>
+                            <div class="work-tab-item">Configuration</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="work-content">
+
+                    </div>
+                </section> -->
+            </div>
+            <div class="work-area">
+                <p>area2</p>
+            </div>
+            <div class="work-area">
+                <p>area3</p>
+            </div>
+            <div class="work-area">
+                <p>area4</p>
+            </div>
+            <div class="work-area">
+                <p>area5</p>
+            </div>
+
+        </div>
+    </div>    
+
+    <script>
+
+        //넥스트버튼 클릭시 단계 상승
+        $(document).ready(function() {
+            //상단 nav-bar
+            $('#nav').load('/include/NAV.html', function() {
+                let nextBtn = document.querySelector('.next-button');
+                let gradeItems = document.querySelectorAll('.grade-item');
+                let areaItems = document.querySelectorAll('.work-area');
+
+                nextBtn.addEventListener('click', function() {
+                    let items = document.querySelectorAll('.grade-item');
+                        for (let i = 0; i < items.length; i++) {
+                            if (items[i].classList.contains('on')) {
+                                items[i].classList.remove('on');
+                                items[i].classList.add('end');
+
+                                areaItems[i].classList.remove('on');
+
+                                if (i + 1 < items.length) {
+                                    items[i + 1].classList.add('on');
+                                    areaItems[i + 1].classList.add('on');
+                                }
+                                break;
+                            }
+                        }
+                })
+
+            });       
+        })        
+
+
+        
+        
+    </script>
+    
+    
+</body>
+</html>
